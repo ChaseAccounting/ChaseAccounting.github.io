@@ -1,3 +1,4 @@
+/* Modern Ledger Theme */
 * {
     margin: 0;
     padding: 0;
@@ -5,59 +6,133 @@
 }
 
 body {
-    font-family: Georgia, serif;
-    line-height: 1.7;
-    max-width: 800px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 850px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #fafafa;
-    color: #333;
+    padding: 40px 20px;
+    background-color: #f0f2f5; /* Light grey-blue background */
+    color: #1a1a1a;
 }
 
 header {
-    border-bottom: 2px solid #333;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+    background: #002d62; /* Deep Navy Blue */
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
 }
 
 header .tagline {
-    color: #666;
-    font-style: italic;
+    color: #d4af37; /* Metallic Gold */
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+nav {
+    margin-top: 20px;
 }
 
 nav a {
-    color: #0066cc;
+    color: white;
     text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    opacity: 0.8;
+    transition: opacity 0.3s;
 }
 
+nav a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* Post Cards */
 .post-list {
     list-style: none;
 }
 
 .post-list li {
-    margin-bottom: 25px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
+    background: white;
+    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+    border-left: 5px solid #002d62;
+}
+
+.post-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 .post-list a {
-    font-size: 1.3em;
-    color: #333;
+    font-size: 1.4em;
+    color: #002d62;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
+    display: block;
 }
 
 .post-list .date {
-    display: block;
-    margin-top: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    background: #e8efff;
+    color: #002d62;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+/* Individual Article Styling */
+article {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+article h2 {
+    color: #002d62;
+    margin-bottom: 10px;
+}
+
+article .date {
     color: #666;
+    margin-bottom: 30px;
+    display: block;
+}
+
+article p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+blockquote {
+    border-left: 4px solid #d4af37;
+    background: #fff9e6;
+    padding: 20px;
+    margin: 30px 0;
     font-style: italic;
+    border-radius: 0 8px 8px 0;
 }
 
 footer {
-    margin-top: 50px;
-    padding-top: 20px;
-    border-top: 1px solid #ccc;
-    color: #666;
+    text-align: center;
+    margin-top: 60px;
+    color: #888;
     font-size: 0.9em;
 }
