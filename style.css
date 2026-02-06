@@ -1,84 +1,133 @@
-/* THE CORPORATE AI LEDGER - MODULE 4 POLISHED THEME */
+/* THE CORPORATE AI LEDGER - DEEP LEDGER THEME */
 :root {
-    --bg-dark: #0d1117; /* Deeper, more professional dark */
-    --card-bg: #161b22;
-    --accent-cyan: #58a6ff; /* Softer, more readable blue */
-    --accent-gold: #f2cc60;
-    --text-main: #c9d1d9;
-    --text-dim: #8b949e;
-    --border: #30363d;
+    --brand-navy: #0f172a;   /* Professional, trustworthy base */
+    --brand-gold: #eab308;   /* High-contrast accent for key info */
+    --slate-gray: #1e293b;   /* Card background */
+    --text-white: #f8fafc;   /* High-readability body text */
+    --text-muted: #94a3b8;   /* Secondary info */
+    --border-glow: #334155;  /* Subtle UI borders */
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    line-height: 1.7; /* Pillar: Typography spacing */
+    background-color: var(--brand-navy);
+    color: var(--text-white);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.8; /* Pillar: Typography - generous spacing for readability */
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Layout Pillar: Controlled line length for better eye tracking */
+main {
+    max-width: 720px; 
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* Hierarchy Pillar: Making the branding feel institutional */
+header {
+    text-align: center;
+    padding: 80px 20px 40px 20px;
+    background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text-white);
     margin: 0;
 }
 
-main {
-    max-width: 750px; /* Pillar: Layout - line length control */
-    margin: 0 auto;
-    padding: 40px 20px;
-}
-
-/* Intentional Hierarchy */
-h1 {
-    color: var(--accent-cyan);
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 0.5rem;
-}
-
-h2 {
-    color: var(--accent-gold);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 10px;
-    margin-top: 2rem;
-}
-
-/* Card Styling */
-article {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 2rem;
-    margin-bottom: 3rem;
-}
-
-/* Purposeful Design for Meta Info */
-.image-meta {
-    background: rgba(88, 166, 255, 0.1);
-    border-left: 4px solid var(--accent-cyan);
-    padding: 15px;
-    margin: 20px 0;
-    font-size: 0.9rem;
-    font-style: italic;
-}
-
-/* Modern Nav */
 nav {
-    text-align: center;
-    padding-bottom: 2rem;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 nav a {
-    color: var(--accent-cyan);
+    color: var(--brand-gold);
     text-decoration: none;
-    font-weight: bold;
     margin: 0 15px;
+    transition: opacity 0.2s;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+/* Content Card Design */
+article {
+    background: var(--slate-gray);
+    border: 1px solid var(--border-glow);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--brand-gold);
+    margin-bottom: 10px;
+}
+
+.date {
+    font-family: 'JetBrains Mono', monospace; /* Tech feel */
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 25px;
+}
+
+/* About the Image Section - Intentional visual separation */
+.image-meta {
+    background: rgba(234, 179, 8, 0.05);
+    border-left: 2px solid var(--brand-gold);
+    padding: 20px;
+    margin: 30px 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    border-radius: 0 8px 8px 0;
 }
 
 img {
-    max-width: 100%;
-    border-radius: 6px;
-    border: 1px solid var(--border);
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    filter: brightness(0.9); /* Makes images blend better with dark theme */
+}
+
+/* Links and Interactive Elements */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li a {
+    display: block;
+    padding: 20px;
+    background: var(--slate-gray);
+    border: 1px solid var(--border-glow);
+    border-radius: 12px;
+    color: var(--text-white);
+    text-decoration: none;
+    margin-bottom: 15px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+li a:hover {
+    transform: translateY(-3px);
+    border-color: var(--brand-gold);
 }
 
 footer {
     text-align: center;
-    color: var(--text-dim);
-    padding: 40px;
+    color: var(--text-muted);
+    padding: 60px 20px;
     font-size: 0.8rem;
+    border-top: 1px solid var(--border-glow);
 }
