@@ -1,32 +1,137 @@
-<tbody>
-    <tr>
-        <td><strong>Gemini 1.5 Pro</strong></td>
-        <td><span class="tag">Audit</span></td>
-        <td>Analyzing 10-K PDFs (Large Context)</td>
-        <td class="rating">9.5/10</td>
-    </tr>
-    <tr>
-        <td><strong>GPT-5.2 (Pro)</strong></td>
-        <td><span class="tag">Analysis</span></td>
-        <td>Rapid calculation of overhead & variances</td>
-        <td class="rating">8.8/10</td>
-    </tr>
-    <tr>
-        <td><strong>Claude 3.5 Sonnet</strong></td>
-        <td><span class="tag">Coding</span></td>
-        <td>Writing Python scripts for data cleanup</td>
-        <td class="rating">9.0/10</td>
-    </tr>
-    <tr>
-        <td><strong>Copilot for Finance</strong></td>
-        <td><span class="tag">FP&A</span></td>
-        <td>Real-time anomaly detection in Excel</td>
-        <td class="rating">8.5/10</td>
-    </tr>
-    <tr>
-        <td><strong>Dext Prepare</strong></td>
-        <td><span class="tag">Bookkeeping</span></td>
-        <td>Automated receipt and invoice extraction</td>
-        <td class="rating">8.0/10</td>
-    </tr>
-</tbody>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Accountant's AI Toolkit | The Corporate AI Ledger</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* DEEP LEDGER BRANDING VARIABLES */
+        :root {
+            --brand-navy: #0f172a;
+            --brand-gold: #eab308;
+            --slate-gray: #1e293b;
+            --text-white: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-glow: #334155;
+        }
+
+        body {
+            background-color: var(--brand-navy);
+            color: var(--text-white);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: var(--brand-gold);
+            border-bottom: 2px solid var(--brand-gold);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* TABLE DESIGN */
+        .toolkit-table-container {
+            overflow-x: auto;
+            margin-top: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border-glow);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--slate-gray);
+        }
+
+        th {
+            background-color: #162033; /* Slightly darker navy */
+            color: var(--brand-gold);
+            text-align: left;
+            padding: 18px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--border-glow);
+        }
+
+        td {
+            padding: 18px;
+            border-bottom: 1px solid var(--border-glow);
+            vertical-align: middle;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: rgba(234, 179, 8, 0.05); /* Subtle gold highlight on hover */
+        }
+
+        /* TOOLKIT COMPONENTS */
+        .tag {
+            background: var(--brand-navy);
+            color: var(--brand-gold);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border: 1px solid var(--brand-gold);
+            white-space: nowrap;
+        }
+
+        .rating {
+            color: var(--brand-gold);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .tool-name {
+            font-weight: bold;
+            color: var(--text-white);
+        }
+
+        /* HEADER/NAV STYLING */
+        header {
+            background: var(--slate-gray);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--brand-gold);
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--brand-gold);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 style="color: var(--brand-gold); margin: 0;">The Corporate AI Ledger</h1>
+        <nav style="margin-top: 10px;">
+            <a href="index.html">Home</a> | 
+            <a href="tools.html" style="color: var(--brand-gold);">Toolkit</a> | 
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>The Accountant's AI Toolkit</h2>
+        <p style="color: var(--text-muted);">A curated directory of AI tools specifically evaluated
