@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     
     <style>
-        /* DEEP LEDGER BRANDING VARIABLES */
         :root {
             --brand-navy: #0f172a;
             --brand-gold: #eab308;
@@ -20,32 +19,47 @@
         body {
             background-color: var(--brand-navy);
             color: var(--text-white);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, sans-serif;
             margin: 0;
-            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--slate-gray);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--brand-gold);
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--brand-gold);
         }
 
         main {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 40px auto;
-            padding: 20px;
+            padding: 0 20px;
         }
 
-        h2 {
-            color: var(--brand-gold);
-            border-bottom: 2px solid var(--brand-gold);
-            padding-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .toolkit-header {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
-        /* TABLE DESIGN */
         .toolkit-table-container {
             overflow-x: auto;
-            margin-top: 30px;
-            border-radius: 8px;
+            border-radius: 12px;
             border: 1px solid var(--border-glow);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         table {
@@ -55,83 +69,128 @@
         }
 
         th {
-            background-color: #162033; /* Slightly darker navy */
+            background-color: #162033;
             color: var(--brand-gold);
             text-align: left;
-            padding: 18px;
-            font-size: 0.85rem;
+            padding: 20px;
+            font-size: 0.75rem;
             text-transform: uppercase;
+            letter-spacing: 0.1em;
             border-bottom: 2px solid var(--border-glow);
         }
 
         td {
-            padding: 18px;
+            padding: 20px;
             border-bottom: 1px solid var(--border-glow);
-            vertical-align: middle;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
+            font-size: 0.9rem;
         }
 
         tr:hover {
-            background: rgba(234, 179, 8, 0.05); /* Subtle gold highlight on hover */
+            background: rgba(234, 179, 8, 0.03);
         }
 
-        /* TOOLKIT COMPONENTS */
         .tag {
             background: var(--brand-navy);
             color: var(--brand-gold);
-            padding: 5px 10px;
+            padding: 4px 10px;
             border-radius: 4px;
             font-size: 0.7rem;
             font-weight: bold;
             border: 1px solid var(--brand-gold);
-            white-space: nowrap;
         }
 
         .rating {
             color: var(--brand-gold);
             font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        .tool-name {
-            font-weight: bold;
-            color: var(--text-white);
-        }
-
-        /* HEADER/NAV STYLING */
-        header {
-            background: var(--slate-gray);
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--brand-gold);
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: var(--brand-gold);
+            font-family: 'Courier New', Courier, monospace;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1 style="color: var(--brand-gold); margin: 0;">The Corporate AI Ledger</h1>
-        <nav style="margin-top: 10px;">
-            <a href="index.html">Home</a> | 
-            <a href="tools.html" style="color: var(--brand-gold);">Toolkit</a> | 
+        <h1 style="color: var(--brand-gold); margin: 0; letter-spacing: 3px;">THE CORPORATE AI LEDGER</h1>
+        <nav style="margin-top: 15px;">
+            <a href="index.html">Home</a>
+            <a href="tools.html" class="active">Toolkit</a>
             <a href="about.html">About</a>
         </nav>
     </header>
 
     <main>
-        <h2>The Accountant's AI Toolkit</h2>
-        <p style="color: var(--text-muted);">A curated directory of AI tools specifically evaluated
+        <div class="toolkit-header">
+            <h2 style="color: var(--brand-gold);">The Accountant's AI Toolkit</h2>
+            <p style="color: var(--text-muted);">Comprehensive expert ratings for applied AI in Corporate Finance & Accounting.</p>
+        </div>
+
+        <div class="toolkit-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model/Tool</th>
+                        <th>Category</th>
+                        <th>Primary Accounting Strength</th>
+                        <th>Chase's Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Claude 3.7 (Reasoning)</strong></td>
+                        <td><span class="tag">Reasoning</span></td>
+                        <td>Superior audit trails & GAAP logic</td>
+                        <td class="rating">9.7/10</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gemini 1.5 Pro</strong></td>
+                        <td><span class="tag">Big Data</span></td>
+                        <td>Analyzing 10-K filings (2M context window)</td>
+                        <td class="rating">9.5/10</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPT-5.2 (Pro)</strong></td>
+                        <td><span class="tag">Generalist</span></td>
+                        <td>Rapid financial variance calculations</td>
+                        <td class="rating">8.8/10</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Copilot for Finance</strong></td>
+                        <td><span class="tag">Utility</span></td>
+                        <td>Direct Excel/ERP data integration</td>
+                        <td class="rating">8.5/10</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dext Prepare</strong></td>
+                        <td><span class="tag">OCR</span></td>
+                        <td>Invoice & receipt data extraction</td>
+                        <td class="rating">8.2/10</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kling AI 2.6</strong></td>
+                        <td><span class="tag">Creative</span></td>
+                        <td>Investor relations & branding video</td>
+                        <td class="rating">7.8/10</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Midjourney v6.5</strong></td>
+                        <td><span class="tag">Creative</span></td>
+                        <td>Annual report data visualization concepts</td>
+                        <td class="rating">7.5/10</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Perplexity Pro</strong></td>
+                        <td><span class="tag">Search</span></td>
+                        <td>Real-time tax code & FASB research</td>
+                        <td class="rating">9.2/10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </main>
+
+    <footer style="text-align: center; padding: 60px; color: var(--text-muted); font-size: 0.75rem;">
+        &copy; 2026 Chase | Phase 2 Prototype | Data Privacy & Accuracy Verified
+    </footer>
+
+</body>
+</html>
