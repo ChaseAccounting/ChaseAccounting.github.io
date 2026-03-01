@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Test: Claude vs. GPT | The Corporate AI Ledger</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Expert Series: Summary Card */
+        .summary-card {
+            background: rgba(234, 179, 8, 0.1);
+            border-left: 5px solid var(--brand-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        /* Comparison Side-by-Side */
+        .logic-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .model-box {
+            background: var(--slate-gray);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-glow);
+        }
+        .claude-header { color: #d97706; font-weight: bold; }
+        .gpt-header { color: #10b981; font-weight: bold; }
+        
+        @media (max-width: 768px) {
+            .logic-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>The Corporate AI Ledger</h1>
+        <nav>
+            <a href="index.html">Home</a> | 
+            <a href="tools.html">Toolkit</a> | 
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <img src="logic-test-header.png" alt="AI Logic Comparison Test">
+            
+            <div class="summary-card">
+                <strong>EXECUTIVE SUMMARY:</strong> In this inaugural <i>Expert Series</i> audit, I tested two reasoning models on a complex Predetermined Overhead Rate (POHR) problem. While both reached the correct numerical conclusion, Claude 3.7 provided a superior audit trail for GAAP compliance.
+            </div>
+
+            <h2>The Audit Trail: Testing "Chain of Thought" in 2026</h2>
+            <p class="date">March 1, 2026</p>
+
+            <p>For a corporate accountant, the "Answer" is only half the battle. The other half is the <strong>Audit Trail</strong>—the step-by-step logic that proves the calculation follows regulatory standards. I provided both models with the following data:</p>
+            
+            <blockquote>
+                Est. Fixed Costs: $500,000 | Est. Hours: 50,000 | Actual Hours: 52,000 | Actual Costs: $515,000.
+            </blockquote>
+
+            <div class="logic-grid">
+                <div class="model-box">
+                    <h4 class="claude-header">Claude 3.7 (Reasoning Mode)</h4>
+                    <p><strong>Method:</strong> Broke down the POHR calculation first, then applied it to actual hours to find 'Applied Overhead' ($520,000).</p>
+                    <p><strong>Audit Trail:</strong> Explicitly flagged the $5,000 over-applied variance as a credit to Cost of Goods Sold. High transparency.</p>
+                </div>
+
+                <div class="model-box">
+                    <h4 class="gpt-header">GPT-5.2 (Pro)</h4>
+                    <p><strong>Method:</strong> Rapidly calculated the $10/hr rate and the $5,000 variance.</p>
+                    <p><strong>Audit Trail:</strong> Concise, but failed to explain <i>why</i> the variance was 'over-applied' rather than 'under-applied' without a follow-up prompt. Moderate transparency.</p>
+                </div>
+            </div>
+
+            
+
+            <h3>The Forensic Takeaway</h3>
+            <p>For junior auditors, this test proves that <strong>not all reasoning is equal.</strong> Claude’s ability to preemptively explain the journal entry implications makes it a more reliable "Agentic Partner" for complex workpapers. GPT remains a faster calculator, but requires more "Human-in-the-Loop" steering to ensure the logic is documented for external auditors.</p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Chase | Accounting Major | Phase 2 Prototype</p>
+    </footer>
+</body>
+</html>
