@@ -1,133 +1,182 @@
-/* THE CORPORATE AI LEDGER - DEEP LEDGER THEME */
+/* 1. BRAND VARIABLES & CORE SETTINGS */
 :root {
-    --brand-navy: #0f172a;   /* Professional, trustworthy base */
-    --brand-gold: #eab308;   /* High-contrast accent for key info */
-    --slate-gray: #1e293b;   /* Card background */
-    --text-white: #f8fafc;   /* High-readability body text */
-    --text-muted: #94a3b8;   /* Secondary info */
-    --border-glow: #334155;  /* Subtle UI borders */
+    --brand-navy: #0f172a;
+    --brand-gold: #eab308;
+    --brand-gold-muted: rgba(234, 179, 8, 0.2);
+    --slate-gray: #1e293b;
+    --text-white: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-glow: #334155;
+    --glass-bg: rgba(30, 41, 59, 0.7);
 }
 
+* {
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 2. DYNAMIC BACKGROUND & TEXTURE */
 body {
-    background-color: var(--brand-navy);
+    background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 100%);
+    background-attachment: fixed;
+    /* Professional grain texture overlay */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-blend-mode: overlay;
     color: var(--text-white);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    line-height: 1.8; /* Pillar: Typography - generous spacing for readability */
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     margin: 0;
-    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
 }
 
-/* Layout Pillar: Controlled line length for better eye tracking */
+/* 3. LAYOUT & CONTAINERS */
 main {
-    max-width: 720px; 
-    margin: 0 auto;
-    padding: 60px 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-/* Hierarchy Pillar: Making the branding feel institutional */
 header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 40px 20px;
     text-align: center;
-    padding: 80px 20px 40px 20px;
-    background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+    border-bottom: 2px solid var(--brand-gold);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 h1 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: var(--text-white);
+    color: var(--brand-gold);
     margin: 0;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 1.8rem;
 }
 
+/* 4. NAVIGATION & INTERACTION */
 nav {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    margin-top: 15px;
 }
 
 nav a {
-    color: var(--brand-gold);
+    color: var(--text-muted);
     text-decoration: none;
     margin: 0 15px;
-    transition: opacity 0.2s;
-}
-
-nav a:hover {
-    opacity: 0.7;
-}
-
-/* Content Card Design */
-article {
-    background: var(--slate-gray);
-    border: 1px solid var(--border-glow);
-    border-radius: 16px;
-    padding: 40px;
-    margin-bottom: 50px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-}
-
-h2 {
-    font-size: 2rem;
-    line-height: 1.2;
-    color: var(--brand-gold);
-    margin-bottom: 10px;
-}
-
-.date {
-    font-family: 'JetBrains Mono', monospace; /* Tech feel */
-    color: var(--text-muted);
+    font-weight: bold;
     font-size: 0.85rem;
-    display: block;
-    margin-bottom: 25px;
+    text-transform: uppercase;
 }
 
-/* About the Image Section - Intentional visual separation */
-.image-meta {
-    background: rgba(234, 179, 8, 0.05);
-    border-left: 2px solid var(--brand-gold);
-    padding: 20px;
-    margin: 30px 0;
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    border-radius: 0 8px 8px 0;
+nav a:hover, nav a.active {
+    color: var(--brand-gold);
+    text-shadow: 0 0 8px rgba(234, 179, 8, 0.5);
 }
 
-img {
-    width: 100%;
-    height: auto;
+/* 5. GLASSMORPHISM COMPONENTS */
+article, .model-box, .toolkit-table-container, .summary-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--brand-gold-muted);
     border-radius: 12px;
-    margin-bottom: 10px;
-    filter: brightness(0.9); /* Makes images blend better with dark theme */
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* Links and Interactive Elements */
-ul {
-    list-style: none;
-    padding: 0;
+/* 6. SCROLL-DRIVEN REVEAL ANIMATIONS */
+@keyframes reveal {
+    from { 
+        opacity: 0; 
+        transform: translateY(40px) scale(0.95); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
 }
 
-li a {
-    display: block;
-    padding: 20px;
-    background: var(--slate-gray);
-    border: 1px solid var(--border-glow);
-    border-radius: 12px;
-    color: var(--text-white);
-    text-decoration: none;
-    margin-bottom: 15px;
-    transition: transform 0.2s, border-color 0.2s;
+article, .featured-post, tr {
+    view-timeline-name: --revealing-item;
+    view-timeline-axis: block;
+    animation: reveal linear both;
+    animation-timeline: --revealing-item;
+    animation-range: entry 5% cover 25%;
 }
 
-li a:hover {
-    transform: translateY(-3px);
+/* 7. CLICK & ACTIVE EFFECTS */
+article:active, .cta-button:active, tr:active {
+    transform: scale(0.98);
     border-color: var(--brand-gold);
 }
 
+a:active {
+    color: var(--brand-gold);
+}
+
+/* 8. TOOLKIT TABLE STYLES */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    color: var(--brand-gold);
+    text-align: left;
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    border-bottom: 1px solid var(--border-glow);
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tag {
+    background: rgba(15, 23, 42, 0.8);
+    color: var(--brand-gold);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    border: 1px solid var(--brand-gold);
+}
+
+.rating {
+    color: var(--brand-gold);
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+/* 9. EXPERT SERIES SPECIALS */
+.summary-card {
+    border-left: 5px solid var(--brand-gold);
+    background: rgba(234, 179, 8, 0.05);
+}
+
+.logic-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .logic-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 1.4rem; }
+}
+
+/* 10. FOOTER */
 footer {
     text-align: center;
-    color: var(--text-muted);
     padding: 60px 20px;
+    color: var(--text-muted);
     font-size: 0.8rem;
     border-top: 1px solid var(--border-glow);
 }
