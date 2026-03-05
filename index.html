@@ -63,5 +63,34 @@
     <footer>
         <p>&copy; 2026 Chase | Accounting Major | Phase 2 Prototype v1.0 | Weldon Spring, MO</p>
     </footer>
+<script>
+    // Interaction Effect: Gold Pulse on Click
+    document.addEventListener('click', function(e) {
+        let pulse = document.createElement('div');
+        pulse.className = 'click-pulse';
+        pulse.style.left = e.pageX + 'px';
+        pulse.style.top = e.pageY + 'px';
+        document.body.appendChild(pulse);
+        setTimeout(() => pulse.remove(), 600);
+    });
+</script>
+
+<style>
+    .click-pulse {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: var(--brand-gold);
+        border-radius: 50%;
+        pointer-events: none;
+        box-shadow: 0 0 15px var(--brand-gold);
+        animation: pulse-out 0.6s ease-out forwards;
+        z-index: 9999;
+    }
+    @keyframes pulse-out {
+        from { transform: scale(0); opacity: 0.8; }
+        to { transform: scale(4); opacity: 0; }
+    }
+</style>
 </body>
 </html>
